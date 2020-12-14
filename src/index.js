@@ -5,15 +5,15 @@ class CountdownTimer {
     constructor({selector, targetDate}) {
         // this.intervalId = null;
         // this.onTick = onTick;
-        // this.currentTime = Date.now();
+        //  this.currentTime = Date.now();
         this.targetDate = targetDate;
         this.selector = selector;
 
         this.refs = {
-            days: document.querySelector('[data-value="days"]'),
-            hours: document.querySelector('[data-value="hours"]'),
-            mins: document.querySelector('[data-value="mins"]'),
-            secs: document.querySelector( '[data-value="secs"]'),
+            days: document.querySelector(`${selector} [data-value="days"]`),
+            hours: document.querySelector(`${selector} [data-value="hours"]`),
+            mins: document.querySelector(`${selector} [data-value="mins"]`),
+            secs: document.querySelector(` ${selector} [data-value="secs"]`),
             faceTimer: document.querySelector('#timer-1'),
         };
 
@@ -47,7 +47,7 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
     selector: '#timer-1',
-    targetDate: new Date('Dec 17, 2020'),
+    targetDate: new Date('Dec 25, 2020'),
 //    onTick: timerStart,
 });
 
